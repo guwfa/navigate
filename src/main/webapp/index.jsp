@@ -7,19 +7,39 @@
 </head>
 <body>
         <div id="header">
-            здесь сылки хуилки
-             <form method="get" name="searchRoom" action="hello-servlet">
-                 <input type="text" value="text">
-                 <input  type="submit" value="submit">
+            <%--
+            Надо расписать меню(я думаю по типу
+            -корпуса
+            -Сгту
+            и ченить такое крч
+            --%>
+            здесь меню
+            <%--
+               поиск будет переводить на другую страницу(
+               условно он уже переводит,но страницы и логики нет)
+               Переход по идее на страницу с картой,там связь с бд
+               запрос ответ и прочая хуета
+           --%>
+             <form method="GET" name="searchRoom" action="mainServlet">
+                 <input type="text"  name="textSearch">
+                 <input  type="submit" value="submit" name="buttonSearch">
              </form>
         </div>
         <div id="sidebar">
+            <%--
+                тут как то реализовать ту штуку с кнопками
+                кабинетов и логика будет такой же как на форме выше
+            --%>
             Тут по идее будет выбор кабинетов и бла бла
         </div>
         <div id="content">
-            Тут будет карта
+            Тут будет
+            Просто картА через  api   гугла либо яндекса
         </div>
         <div id="footer">
+            <%--
+                Тут тупо расписать подвал и какие мы молодцы
+            --%>
             Подвал
         </div>
 </body>
