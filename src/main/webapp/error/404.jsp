@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: guwfa
-  Date: 03.07.2022
-  Time: 23:10
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
@@ -13,6 +6,6 @@
   <link href="${pageContext.request.contextPath}/stylesheet/error.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<h1 class="h1">Oh shit, it's there again</h1>
+<h1 class="h1">Oh shit,there again going to nothining</h1>
 </body>
 </html>
