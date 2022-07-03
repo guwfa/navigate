@@ -16,7 +16,7 @@ public class NotFoundServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
         try {
-            writer.println("<h1>Not Found:</h1>");
+            writer.println("<h1>Not Found: String cannot be empty</h1>");
         } finally {
             writer.close();
         }
