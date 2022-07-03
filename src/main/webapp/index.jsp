@@ -2,15 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Карта навигации</title>
+    <link href="stylesheet/style.css" rel="stylesheet" type="text/css"/>
 </head>
-<link href="style.css" rel="stylesheet" type="text/css">
 <body>
         <div id="header">
             здесь сылки хуилки
-             <form>
+             <form method="get" name="searchRoom" action="hello-servlet">
                  <input type="text" value="text">
-                 <input type="submit" value="submit">
+                 <input  type="submit" value="submit">
              </form>
         </div>
         <div id="sidebar">
