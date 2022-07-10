@@ -1,0 +1,551 @@
+body{
+    background-color: #0c1ba0;
+    font-family: initial;
+    font-style: oblique;
+    font-weight: 100;
+    text-indent: 20px;
+    font-size:20px;
+    margin: 0px;
+}
+
+
+
+header{
+    height: 20%;
+    margin: auto;
+    
+    padding: 20px;
+    border-radius: 15px;
+    -moz-border-radius: 15px; /* Для Firefox 3 */
+    -webkit-border-radius: 15px; /* Для Safari 4 и Chrome */
+}
+
+.logo{
+ display: flex;
+ 
+}
+
+#SGTU{
+margin-left: -30px;
+}
+
+
+.intro__inner {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro__title {
+    color: #fff;
+    font-size: 40px;
+    line-height: 1;
+    font-weight: normal;
+    
+}
+.intro__title::first-letter{
+    font-size: 50px;
+}
+
+
+.intro__title:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 3px auto;
+    background-color: #fff;
+}
+
+.intro__suptitle {
+    margin-bottom: 0px;
+    line-height: 1;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+
+
+.foto{
+    width: 50px;
+    height: 50px;
+    flex: 0;
+   
+}
+
+
+#searchRoom{
+    text-align: right;
+
+}
+
+#poisk{
+    width: 100px;
+    background-color: rgba(240, 248, 255, 0.808);
+}
+
+.container{
+    
+    display: flex;
+    justify-content: center;
+    
+}
+
+.navigazia{
+    margin: 20px;
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+    height: 40px;
+    width: 100px;
+  border: 3px solid rgb(8, 10, 148);
+  color: rgb(8, 10, 148);
+  font-size: 20px;
+  font-family: initial;
+  font-style: oblique;
+    font-weight: bold;
+  background-image: linear-gradient(#0c1ba0, #0834f8);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size .5s, color .5s;
+    
+}
+
+  .navigazia:hover{
+    background-size: 100% 100%;
+  color: #fff;
+  }
+
+#content { /*  */
+    min-height: 600px;
+    height: 70%;
+    margin: auto; /* Значения отступов */
+    padding: 5px; /* Поля вокруг текста */
+    width: 900px;
+    height: 670px;
+    
+}
+
+#maket{
+    width: 900px;
+    height: 300px;
+    filter: alpha(Opacity=75); /* Полупрозрачность для IE */
+    opacity: 0.75; /* Полупрозрачность для других браузеров */ 
+   
+}
+#maket:hover{
+    filter: alpha(Opacity=100); /* Полупрозрачность для IE */
+    opacity:1; /* Полупрозрачность для других браузеров */ 
+    filter:sepia(100%);
+    
+}
+
+#foto1,#foto2,#foto3,#foto4{
+    position: relative;
+    text-align: center;
+    display: flex;
+}
+
+#foto1{
+    left: 0px;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+   
+}
+
+#foto1:hover{
+    left: 20px ;
+    z-index: 2;
+}
+
+#foto2{
+    top: -190px;
+    left: -60px ;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+ 
+}
+#foto2:hover{
+    left: -20px ;
+    z-index: 2;
+}
+
+#foto3{
+    top: -400px;
+    left: -120px ;
+    transition-duration: 0.7s;
+    transition-timing-function: linear;
+}
+#foto3:hover{
+    left: -40px ;
+    z-index: 2;
+}
+
+#foto4{
+    top: -610px;
+    left: -180px ;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+}
+#foto4:hover{
+    left: -100px ;
+    
+}
+#textFoto{
+    color: rgb(253, 251, 251);
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    background-size: 100% 100%;
+    color: #fff;
+}
+footer{
+    margin: 0;
+    background-color: #1b1b1b;
+    height: 100px;
+    display: flex;
+}
+#footer-title{
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#a-menu{
+    color: #aaa;
+    font-size: 12px;
+}
+.row2{
+    margin-left: 15px
+}
+
+.social{
+    display: flex;
+}
+#vk{
+    background-image: url(../photo/vse.png);
+    background-repeat: no-repeat;
+    height: 36px;
+    width: 36px;
+    background-position:0 -36px;
+    margin-left: 10px;
+    
+}
+#vk:hover{
+    background-image: url(../photo/vse.png);
+    background-position:0 0;
+} 
+ 
+#ok{
+    background-image: url(../photo/vse.png);
+    background-repeat: no-repeat;
+    height: 36px;
+    width: 36px;
+    background-position:-36px -36px;
+    margin-left: 10px;
+    
+}
+#ok:hover{
+    background-image: url(../photo/vse.png);
+    background-position:-36px 0;
+}  
+
+#tm{
+    background-image: url(../photo/vse.png);
+    background-repeat: no-repeat;
+    height: 36px;
+    width: 36px;
+    background-position:-72px -36px;
+    margin-left: 10px;
+    
+}
+#tm:hover{
+    background-image: url(../photo/vse.png);
+    background-position:-72px 0;
+}  
+/* 1-2-3-4 floor */ 
+
+#selectedButton{
+    text-align: center;
+    
+}
+
+.navigaziaFloor{
+    margin: 20px;
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+      height: 40px;
+      width: 180px;
+    border: 3px solid rgb(8, 10, 148);
+    color: rgb(8, 10, 148);
+    font-size: 20px;
+    font-family: initial;
+    font-style: oblique;
+      font-weight: bold;
+    background-image: linear-gradient(#0c1ba0, #0834f8);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size .5s, color .5s;
+}
+.navigaziaFloor:hover{
+    background-size: 100% 100%;
+  color: #fff;
+  }
+
+.navigaziaSelect{
+    margin: 20px ;
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+      height: 40px;
+      width: 120px;
+    border: 3px solid rgb(8, 10, 148);
+    color: rgb(8, 10, 148);
+    font-size: 20px;
+    font-family: initial;
+    font-style: oblique;
+      font-weight: bold;
+      left: -20px;
+    
+}
+
+.floorContent{
+    display: flex;
+    height: 500px;
+}
+
+.floorNumber{
+    flex: 1;
+    height: 400px;
+    margin: 0px 10px;
+    overflow-y: scroll;
+
+}
+
+.floorNumber::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 10px;
+   
+  }
+  
+  .floorNumber::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #f9f9fd;
+    
+  }
+  
+  .floorNumber::-webkit-scrollbar-track {
+
+    border-radius: 10px;
+    width: 1px;
+    background-color: #0898ec;
+    border: 4px solid transparent ;
+    background-clip: content-box;
+  }
+  
+.floorNumberLeft{
+    flex: 1;
+    
+    height: 400px;
+    margin: 0px 10px;
+    overflow-y: scroll;
+    unicode-bidi:bidi-override;
+    direction: rtl;
+
+}
+
+
+
+  .floorNumberLeft::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 10px;
+   
+  }
+  
+  .floorNumberLeft::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #f9f9fd;
+    
+  }
+  
+  .floorNumberLeft::-webkit-scrollbar-track {
+
+    border-radius: 10px;
+    width: 1px;
+    background-color: #0898ec;
+    border: 4px solid transparent ;
+    background-clip: content-box;
+  }
+  
+#floor4Content{
+    text-align: center;
+    margin: 20px;
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+      height: 50px;
+      width: 50px;
+    border: 3px solid rgb(8, 10, 148);
+    color: rgb(8, 10, 148);
+    font-size: 20px;
+    font-family: initial;
+    font-style: oblique;
+      font-weight: bold;
+      background-image: linear-gradient(#0c1ba0, #0834f8);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 0% 100%;
+      transition: background-size .5s, color .5s;
+}
+
+#floor4Content:hover{
+    background-size: 100% 100%;
+  color: #fff;
+  }
+
+
+.floorMap{
+    flex: 5;
+    border: 3px solid rgb(5, 5, 5);
+    height: 400px;
+}
+.floorMapDeanery{
+    flex: 7;
+    border: 3px solid rgb(5, 5, 5);
+    height: 450px;
+    margin-right: 50px;
+}
+.floorMaprestroom{
+    flex: 7;
+    border: 3px solid rgb(5, 5, 5);
+    height: 450px;
+    margin-right: 50px; 
+}
+.comeBack{
+    margin: 0px;
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+      height: 30px;
+      width: 30px;
+    border: 3px solid rgb(8, 10, 148);
+    color: rgb(8, 10, 148);
+    font-size: 20px;
+    font-family: initial;
+    font-style: oblique;
+      font-weight: bold;
+    background-image: linear-gradient(#0c1ba0, #0834f8);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size .3s, color .3s;
+    left: -10px;
+}
+.comeBack:hover{
+    background-size: 100% 100%;
+  color: #fff;
+  }
+
+/*1 floor */
+
+#floor1Content{
+    text-align: center;
+    margin: 20px;
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+      height: 50px;
+      width: 100px;
+    border: 3px solid rgb(8, 10, 148);
+    color: rgb(8, 10, 148);
+    font-size: 20px;
+    font-family: initial;
+    font-style: oblique;
+      font-weight: bold;
+      background-image: linear-gradient(#0c1ba0, #0834f8);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 0% 100%;
+      transition: background-size .5s, color .5s;
+}
+
+#floor1Content:hover{
+    background-size: 100% 100%;
+  color: #fff;
+  }
+
+  /*restroom*/
+  .restroom{
+    text-align: center;
+    margin: 20px;
+    margin-left: 40px;
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+      height: 50px;
+      width: 50px;
+    border: 3px solid rgb(8, 10, 148);
+    color: rgb(8, 10, 148);
+    font-size: 30px;
+    font-family: initial;
+    font-style: oblique;
+      font-weight: bold;
+      
+    
+}
+
+#restroomContent{
+    text-align: center;
+    margin: 20px;
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+      height: 40px;
+      width: 100px;
+    border: 3px solid rgb(8, 10, 148);
+    color: rgb(8, 10, 148);
+    font-size: 20px;
+    font-family: initial;
+    font-style: oblique;
+      font-weight: bold;
+      background-image: linear-gradient(#0c1ba0, #0834f8);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 0% 100%;
+      transition: background-size .5s, color .5s;
+}
+
+#restroomContent:hover{
+    background-size: 100% 100%;
+  color: #fff;
+  }
+
+  .floorMaprestroom{
+    flex: 7;
+    border: 3px solid rgb(5, 5, 5);
+    height: 450px;
+    margin-right: 50px; 
+}
+.restroomNumber{
+    flex: 1;
+}
+.restroomNumberLeft{
+    flex: 1;
+    margin-left: 40px;
+}

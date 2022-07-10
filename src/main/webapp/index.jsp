@@ -3,46 +3,47 @@
 <html>
 <head>
     <title>Карта навигации</title>
-    <link href="stylesheet/style.css" rel="stylesheet" type="text/css"/>
+    <link href="stylesheet/styleAnre.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image" href="./img/logoSSTU_2.png">
 </head>
-<body>
-        <div id="header">
-            <%--
-            Надо расписать меню(я думаю по типу
-            -корпуса
-            -Сгту
-            и ченить такое крч
-            Все страницы добавляй в  page  с расширением  .jsp, тот же  html  но с ним я могу работать
-            --%>
+<body class="element" id="element">
+        <header id="header">
+            <jsp:include page="./page/header.jsp" />
+        </header>
+        <main>
+            <jsp:include page="./page/searchMenu.jsp"/>
 
-            здесь меню
-            <%--
-               поиск будет переводить на другую страницу(
-               условно он уже переводит,но страницы и логики нет)
-               Переход по идее на страницу с картой,там связь с бд
-               запрос ответ и прочая хуета
-           --%>
-             <form method="GET" name="searchRoom" action="mainServlet">
-                 <input type="text"  name="textSearch">
-                 <input  type="submit" value="submit" name="buttonSearch">
-             </form>
-        </div>
-        <div id="sidebar">
-            <%--
-                тут как то реализовать ту штуку с кнопками
-                кабинетов и логика будет такой же как на форме выше
-            --%>
-            Тут по идее будет выбор кабинетов и бла бла
-        </div>
-        <div id="content">
-            Тут будет
-            Просто картА через  api   гугла либо яндекса
-        </div>
-        <div id="footer">
-            <%--
-                Тут тупо расписать подвал и какие мы молодцы
-            --%>
-            Подвал
-        </div>
+            <br>
+            <div id="content">
+                <div id="foto1"><p id="textFoto">1 этаж</p><a href="floor1.jsp"><img id="maket" src="./img/model1.png" alt="Первый этаж"> </a></div>
+
+                <div id="foto2"><p id="textFoto">2 этаж</p><a href="floor2.jsp"><img id="maket" src="./img/model2.png" alt="Второй этаж"> </a></div>
+
+                <div id="foto3"><p id="textFoto">3 этаж</p><a href="floor3.jsp"><img id="maket" src="./img/model3.png" alt="Третий этаж"> </a></div>
+
+                <div id="foto4"><p id="textFoto">4 этаж</p><a href="floor4.jsp"><img id="maket" src="./img/model4.png" alt="Четвертый этаж"> </a></div>
+            </div>
+
+        </main>
+        <footer id="footer">
+            <jsp:include page="./page/footer.jsp" />
+        </footer>
+        <script src="./js/three.min.js"></script>        <script src="./js/vanta.net.min.js"></script>
+        <script>
+            VANTA.NET({
+                el: "#element",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0x3f4aff,
+                points: 8.00,
+                maxDistance: 17.00,
+                spacing: 17.00
+            })
+        </script>
 </body>
 </html>

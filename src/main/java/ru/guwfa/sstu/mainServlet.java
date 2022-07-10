@@ -9,7 +9,6 @@ import javax.servlet.annotation.*;
 
 @WebServlet(name = "mainServlet", value = "/mainServlet")
 public class mainServlet extends HttpServlet {
-    private String message;
 
     public void init() {}
 
@@ -31,6 +30,5 @@ public class mainServlet extends HttpServlet {
        }
     }
 
-    public void destroy() {
-    }
+    public void destroy() {}
 }
