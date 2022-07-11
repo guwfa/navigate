@@ -5,7 +5,7 @@
     <a  href="./deanery.jsp">Деканат</a>
   </button>
 
-  <button class="navigazia">
+  <button class="navigaziaFloor" formaction="./floor1.jsp">
     <a href="./floor1.jsp">1 этаж</a>
   </button>
 
