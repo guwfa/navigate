@@ -549,3 +549,60 @@ footer{
     flex: 1;
     margin-left: 40px;
 }
+
+/*SVG*/
+
+svg{
+    position: absolute;
+    left: -20px;
+    top: -8px;
+}
+.part{
+    fill: #0834f8;
+    opacity:.2 ;
+
+}
+.part:hover{
+
+    opacity: .5;
+}
+.part.active{
+
+    opacity: .5;
+}
+.floorMap{
+    flex: 5;
+    border: 3px solid rgb(5, 5, 5);
+    height: 400px;
+    position: relative;
+    text-align: center;
+    background-color: #aaa;
+    /*overflow-x: scroll;*/
+}
+.svgfloor{
+    display: block;
+    min-height: 300px;
+    width: 1280px;
+    height: 311px;
+}
+
+.floorMap::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 10px;
+
+}
+
+.floorMap::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #f9f9fd;
+
+}
+
+.floorMap::-webkit-scrollbar-track {
+
+    border-radius: 10px;
+    width: 1px;
+    background-color: #0898ec;
+    border: 4px solid transparent ;
+
+}
