@@ -237,46 +237,48 @@ footer{
     display: flex;
 }
 #vk{
-    background-image: url(../photo/vse.png);
+    background-image: url(../img/SocNet.png);
     background-repeat: no-repeat;
     height: 36px;
     width: 36px;
     background-position:0 -36px;
     margin-left: 10px;
-    
+
 }
 #vk:hover{
-    background-image: url(../photo/vse.png);
+    background-image: url(../img/SocNet.png);
     background-position:0 0;
-} 
- 
+}
+
 #ok{
-    background-image: url(../photo/vse.png);
+    background-image: url(../img/SocNet.png);
     background-repeat: no-repeat;
     height: 36px;
     width: 36px;
     background-position:-36px -36px;
     margin-left: 10px;
-    
+
 }
 #ok:hover{
-    background-image: url(../photo/vse.png);
+    background-image: url(../img/SocNet.png);
     background-position:-36px 0;
-}  
+}
 
 #tm{
-    background-image: url(../photo/vse.png);
+    background-image: url(../img/SocNet.png);
     background-repeat: no-repeat;
     height: 36px;
     width: 36px;
     background-position:-72px -36px;
     margin-left: 10px;
-    
+
 }
 #tm:hover{
-    background-image: url(../photo/vse.png);
+    background-image: url(../img/SocNet.png);
     background-position:-72px 0;
-}  
+}
+
+
 /* 1-2-3-4 floor */ 
 
 #selectedButton{
