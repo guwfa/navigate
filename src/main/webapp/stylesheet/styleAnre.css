@@ -560,17 +560,19 @@ svg{
     top: -8px;
 }
 .part{
-    fill: #0834f8;
-    opacity:.2 ;
-
-}
-.part:hover{
-
-    opacity: .5;
-}
+  fill: #0834f8;
+  opacity:.2 ;
+ 
+ }
+ .part:hover{
+  transition: .8s;
+  fill: #0230ff;
+  opacity: .6;
+ }
 .part.active{
-
-    opacity: .5;
+  transition: .8s;
+  fill: #0230ff;
+  opacity: .6;
 }
 .floorMap{
     flex: 5;
