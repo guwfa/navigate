@@ -41,9 +41,7 @@ public class ButtonSearch extends HttpServlet {
         220 кабинет
         */
         List<String> list = new ArrayList<>(List.of(searchText.split("/")));
-        try {
-            Driver driver = new D
-        }
+
     }
 
     public void destroy() {}
