@@ -112,7 +112,7 @@
             <button id="floor4Content" onmouseover="hover437On()" onmouseout="hover437Off()">437</button>
         </div>
     </div>
-    <script src="../js/button.js"></script>
+    <script src="./js/button.js"></script>
 </main>
 <footer id="footer">
     <jsp:include page="page/footer.jsp" />
