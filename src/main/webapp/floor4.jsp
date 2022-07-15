@@ -117,7 +117,7 @@
 <footer id="footer">
     <jsp:include page="page/footer.jsp" />
 </footer>
-<script src="js/three.min.js"></script>        <script src="js/vanta.net.min.js"></script>
+<script src="./js/three.min.js"></script>        <script src="./js/vanta.net.min.js"></script>
 <script>
     VANTA.NET({
         el: "#element",
