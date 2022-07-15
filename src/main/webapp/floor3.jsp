@@ -113,12 +113,12 @@
             <button id="floor4Content" onmouseover="hover436On()" onmouseout="hover436Off()">336</button>
         </div>
     </div>
-    <script src="../js/button.js"></script>
+    <script src="./js/button.js"></script>
 </main>
 <footer id="footer">
     <jsp:include page="page/footer.jsp" />
 </footer>
-<script src="js/three.min.js"></script>        <script src="js/vanta.net.min.js"></script>
+<script src="./js/three.min.js"></script>        <script src="./js/vanta.net.min.js"></script>
 <script>
     VANTA.NET({
         el: "#element",
