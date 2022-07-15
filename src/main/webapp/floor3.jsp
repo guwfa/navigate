@@ -88,7 +88,7 @@
 
 
             </svg>
-            <img class="svgfloor" src="../photo/makets3.png">
+            <img class="svgfloor" src="./img/model3.png">
         </div>
 
         <div class="floorNumber">
