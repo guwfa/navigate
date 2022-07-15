@@ -14,17 +14,21 @@ import java.util.Arrays;
 import java.util.List;
 import java.sql.*;
 
-@WebServlet(name = "ButtonSearch", value = "/OutPutTest")
+@WebServlet(name = "ButtonSearch", value = "/ButtonSearch")
 public class ButtonSearch extends HttpServlet {
-    /*private static final URL = "jdbc:mysql://localhost:3306/navigate";
-    private static final USERNAME = "root";
-    private static final PASSWORD = "root123xc";*/
+    private final String jdbcUrl = "jdbc:mysql://localhost:3306/navigate";
+    private final String userName = "root";
+    private final String password = "root123xc";
     Connection connection;
     public void init() {}
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
 
         String searchText = request.getParameter("textSearch");
+        List<String> list;
+        String sqlStr = "SELECT";
+
         if(searchText.length() < 1){
             String path = "/notfound";
             ServletContext servletContext = getServletContext();
@@ -40,7 +44,15 @@ public class ButtonSearch extends HttpServlet {
         где 5 - этаж
         220 кабинет
         */
-        List<String> list = new ArrayList<>(List.of(searchText.split("/")));
+        //list = new ArrayList<>(List.of(searchText.split("/")));
+
+        System.out.println(Arrays.toString(searchText.split("/")));
+
+        try {
+            Driver driver = (Driver) DriverManager.getConnection(jdbcUrl,userName,password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
