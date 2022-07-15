@@ -428,10 +428,13 @@ footer{
     height: 400px;
 }
 .floorMapDeanery{
-    flex: 7;
-    border: 3px solid rgb(5, 5, 5);
-    height: 450px;
-    margin-right: 50px;
+  margin-right: 285px;
+  flex: 5;
+  border: 3px solid rgb(5, 5, 5);
+  height: 400px;
+  position: relative;
+  text-align: center;
+  background-color: #aaa;
 }
 .floorMaprestroom{
     flex: 7;
