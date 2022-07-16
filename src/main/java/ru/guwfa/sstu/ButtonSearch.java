@@ -22,12 +22,12 @@ public class ButtonSearch extends HttpServlet {
     Connection connection;
     public void init() {}
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
 
         String searchText = request.getParameter("textSearch");
-        List<String> list;
-        String sqlStr = "SELECT";
+        List<String> list = null;
+        String sqlStr = "";
 
         if(searchText.length() < 1){
             String path = "/notfound";
@@ -39,20 +39,19 @@ public class ButtonSearch extends HttpServlet {
                 throw new RuntimeException(e);
             }
         }
-        /*
-        Данные приходят в формате  5/220
-        где 5 - этаж
-        220 кабинет
-        */
-        //list = new ArrayList<>(List.of(searchText.split("/")));
 
-        System.out.println(Arrays.toString(searchText.split("/")));
+        //Данные приходят в формате  5/220, где 5 - этаж   220 кабинет
 
-        try {
-            Driver driver = (Driver) DriverManager.getConnection(jdbcUrl,userName,password);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+       try {
+           list = new ArrayList<>(List
+                   .of(searchText
+                           .split("/")));
+       }
+       catch (Exception e){
+           System.err.println(e);
+       }
+
+
 
     }
 
