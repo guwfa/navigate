@@ -3,10 +3,10 @@ package ru.guwfa.sstu.service;
 import ru.guwfa.sstu.DAO.CampusBuildDAO;
 import ru.guwfa.sstu.controller.Util;
 import ru.guwfa.sstu.entity.CampusBuild;
+import ru.guwfa.sstu.entity.DescriptionBuild;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CampusBuildService extends Util implements CampusBuildDAO {
@@ -44,7 +44,35 @@ public class CampusBuildService extends Util implements CampusBuildDAO {
 
     @Override
     public List<CampusBuild> getAll() {
-        return null;
+        List<CampusBuild> list = new ArrayList<>();
+        Statement statement = null;
+        String sql = "SELECT idCampusBuild,idTypeBuilding,idDescriptionBuild,idFloorBuild FROM CampusBuild";
+
+        try{
+            statement =  connection.createStatement();
+
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while (resultSet.next()){
+                CampusBuild campusBuild = new CampusBuild();
+                campusBuild.setIdDescriptionBuild(resultSet.getInt("idCampusBuild"));
+                campusBuild.setIdTypeBuilding(resultSet.getInt("idTypeBuilding"));
+                campusBuild.setIdDescriptionBuild(resultSet.getInt("idDescriptionBuild"));
+                campusBuild.setIdFloorBuild(resultSet.getInt("idFloorBuild"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        finally {
+            try {
+                assert statement != null;
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return list;
     }
 
     @Override

@@ -60,7 +60,8 @@ public class StudyRoom {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         StudyRoom studyRoom = (StudyRoom) o;
-        return idStudyRoom == studyRoom.idStudyRoom && idCampusBuild == studyRoom.idCampusBuild && idFloorBuild == studyRoom.idFloorBuild && idDescriptionRoom == studyRoom.idDescriptionRoom && typeRoom == studyRoom.typeRoom;
+        return idStudyRoom == studyRoom.idStudyRoom && idCampusBuild == studyRoom.idCampusBuild && idFloorBuild == studyRoom.idFloorBuild
+                && idDescriptionRoom == studyRoom.idDescriptionRoom && typeRoom == studyRoom.typeRoom ;
     }
 
     @Override
@@ -70,7 +71,7 @@ public class StudyRoom {
 
     @Override
     public String toString() {
-        return "studyRoom{" +
+        return "StudyRoom{" +
                 "idStudyRoom=" + idStudyRoom +
                 ", idCampusBuild=" + idCampusBuild +
                 ", idFloorBuild=" + idFloorBuild +

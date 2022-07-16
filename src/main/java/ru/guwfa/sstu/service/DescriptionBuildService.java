@@ -3,10 +3,10 @@ package ru.guwfa.sstu.service;
 import ru.guwfa.sstu.DAO.DescriptionBuildDAO;
 import ru.guwfa.sstu.controller.Util;
 import ru.guwfa.sstu.entity.DescriptionBuild;
+import ru.guwfa.sstu.entity.DescriptionRoom;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DescriptionBuildService extends Util implements DescriptionBuildDAO {
@@ -44,7 +44,35 @@ public class DescriptionBuildService extends Util implements DescriptionBuildDAO
 
     @Override
     public List<DescriptionBuild> getAll() {
-        return null;
+        List<DescriptionBuild> list = new ArrayList<>();
+        Statement statement = null;
+        String sql = "SELECT idDescriptionBuild,descriptionBuild,buildingName,address FROM DescriptionBuild";
+
+        try{
+            statement =  connection.createStatement();
+
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while (resultSet.next()){
+                DescriptionBuild descriptionBuild = new DescriptionBuild();
+                descriptionBuild.setIdDescriptionBuild(resultSet.getInt("idDescriptionBuild"));
+                descriptionBuild.setDescriptionBuild(resultSet.getString("descriptionBuild"));
+                descriptionBuild.setBuildingName(resultSet.getString("buildingName"));
+                descriptionBuild.setAddress(resultSet.getString("address"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        finally {
+            try {
+                assert statement != null;
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return list;
     }
 
     @Override

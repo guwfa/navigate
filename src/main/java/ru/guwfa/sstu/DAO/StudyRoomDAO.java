@@ -2,6 +2,7 @@ package ru.guwfa.sstu.DAO;
 
 import ru.guwfa.sstu.entity.StudyRoom;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface StudyRoomDAO {
@@ -12,6 +13,8 @@ public interface StudyRoomDAO {
     List<StudyRoom> getAll();
 
     StudyRoom getById(int id);
+
+    StudyRoom getById(List<Integer> list) throws SQLException;
 
     //update
     void update(StudyRoom studyRoom);

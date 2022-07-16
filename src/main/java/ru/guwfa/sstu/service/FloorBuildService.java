@@ -3,10 +3,10 @@ package ru.guwfa.sstu.service;
 import ru.guwfa.sstu.DAO.FloorBuildDAO;
 import ru.guwfa.sstu.controller.Util;
 import ru.guwfa.sstu.entity.FloorBuild;
+import ru.guwfa.sstu.entity.StudyRoom;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class FloorBuildService extends Util implements FloorBuildDAO {
@@ -17,7 +17,7 @@ public class FloorBuildService extends Util implements FloorBuildDAO {
     public void insert(FloorBuild floorBuild) {
         PreparedStatement preparedStatement = null;
 
-        String sql = "INSERT INTO FloorBuild(idFloorBuld,idCampusBuild,idStudyRoom,numberFloor) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO FloorBuild(idFloorBuild,idCampusBuild,idStudyRoom,numberFloor) VALUES(?,?,?,?)";
 
         try{
             preparedStatement = connection.prepareStatement(sql);
@@ -44,7 +44,35 @@ public class FloorBuildService extends Util implements FloorBuildDAO {
 
     @Override
     public List<FloorBuild> getAll() {
-        return null;
+        List<FloorBuild> list = new ArrayList<>();
+        Statement statement = null;
+        String sql = "SELECT idFloorBuild,idCampusBuild,idStudyRoom,numberFloor FROM FloorBuild";
+
+        try{
+            statement =  connection.createStatement();
+
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while (resultSet.next()){
+                FloorBuild floorBuild = new FloorBuild();
+                floorBuild.setIdFloorBuild(resultSet.getInt("idFloorBuild"));
+                floorBuild.setIdCampusBuild(resultSet.getInt("idCampusBuild"));
+                floorBuild.setIdStudyRoom(resultSet.getInt("idStudyRoom"));
+                floorBuild.setNumberFloor(resultSet.getInt("numberFloor"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        finally {
+            try {
+                assert statement != null;
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return list;
     }
 
     @Override
