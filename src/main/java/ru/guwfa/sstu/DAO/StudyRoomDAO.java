@@ -14,6 +14,8 @@ public interface StudyRoomDAO {
 
     StudyRoom getById(int id);
 
+    List<StudyRoom> getById(int floor,int cab);
+
     StudyRoom getById(List<Integer> list) throws SQLException;
 
     //update

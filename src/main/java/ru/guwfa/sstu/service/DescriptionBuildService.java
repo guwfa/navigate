@@ -17,14 +17,16 @@ public class DescriptionBuildService extends Util implements DescriptionBuildDAO
     public void insert(DescriptionBuild descriptionBuild) {
         PreparedStatement preparedStatement = null;
 
-        String sql = "INSERT INTO DescriptionBuild(idDescriptionBuild,descriptionBuild,buildingName,address) VALUES(?,?,?,?)";
+        String sql =
+                "INSERT INTO DescriptionBuild(idDescriptionBuild,descriptionBuild,buildingName,address) " +
+                "VALUES(?,?,?,?)";
 
         try{
             preparedStatement = connection.prepareStatement(sql);
 
             preparedStatement.setInt(1,descriptionBuild.getIdDescriptionBuild());
             preparedStatement.setString(2,descriptionBuild.getDescriptionBuild());
-            preparedStatement.setInt(3,descriptionBuild.getBuildingName());
+            preparedStatement.setString(3,descriptionBuild.getBuildingName());
             preparedStatement.setString(4,descriptionBuild.getAddress());
 
             preparedStatement.executeUpdate();
@@ -46,7 +48,9 @@ public class DescriptionBuildService extends Util implements DescriptionBuildDAO
     public List<DescriptionBuild> getAll() {
         List<DescriptionBuild> list = new ArrayList<>();
         Statement statement = null;
-        String sql = "SELECT idDescriptionBuild,descriptionBuild,buildingName,address FROM DescriptionBuild";
+        String sql =
+                "SELECT idDescriptionBuild,descriptionBuild,buildingName,address " +
+                "FROM DescriptionBuild";
 
         try{
             statement =  connection.createStatement();
@@ -55,10 +59,13 @@ public class DescriptionBuildService extends Util implements DescriptionBuildDAO
 
             while (resultSet.next()){
                 DescriptionBuild descriptionBuild = new DescriptionBuild();
+
                 descriptionBuild.setIdDescriptionBuild(resultSet.getInt("idDescriptionBuild"));
                 descriptionBuild.setDescriptionBuild(resultSet.getString("descriptionBuild"));
                 descriptionBuild.setBuildingName(resultSet.getString("buildingName"));
                 descriptionBuild.setAddress(resultSet.getString("address"));
+
+                list.add(descriptionBuild);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

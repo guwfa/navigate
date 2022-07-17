@@ -17,7 +17,9 @@ public class FloorBuildService extends Util implements FloorBuildDAO {
     public void insert(FloorBuild floorBuild) {
         PreparedStatement preparedStatement = null;
 
-        String sql = "INSERT INTO FloorBuild(idFloorBuild,idCampusBuild,idStudyRoom,numberFloor) VALUES(?,?,?,?)";
+        String sql =
+                "INSERT INTO FloorBuild(idFloorBuild,idCampusBuild,idStudyRoom,numberFloor) " +
+                "VALUES(?,?,?,?)";
 
         try{
             preparedStatement = connection.prepareStatement(sql);
@@ -46,7 +48,9 @@ public class FloorBuildService extends Util implements FloorBuildDAO {
     public List<FloorBuild> getAll() {
         List<FloorBuild> list = new ArrayList<>();
         Statement statement = null;
-        String sql = "SELECT idFloorBuild,idCampusBuild,idStudyRoom,numberFloor FROM FloorBuild";
+        String sql =
+                "SELECT idFloorBuild,idCampusBuild,idStudyRoom,numberFloor " +
+                "FROM FloorBuild";
 
         try{
             statement =  connection.createStatement();
@@ -55,10 +59,13 @@ public class FloorBuildService extends Util implements FloorBuildDAO {
 
             while (resultSet.next()){
                 FloorBuild floorBuild = new FloorBuild();
+
                 floorBuild.setIdFloorBuild(resultSet.getInt("idFloorBuild"));
                 floorBuild.setIdCampusBuild(resultSet.getInt("idCampusBuild"));
                 floorBuild.setIdStudyRoom(resultSet.getInt("idStudyRoom"));
                 floorBuild.setNumberFloor(resultSet.getInt("numberFloor"));
+
+                list.add(floorBuild);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

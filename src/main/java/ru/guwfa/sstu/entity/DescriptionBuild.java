@@ -29,7 +29,7 @@ public class DescriptionBuild {
         this.descriptionBuild = descriptionBuild;
     }
 
-    public int getBuildingName() {
+    public String getBuildingName() {
         return buildingName;
     }
 

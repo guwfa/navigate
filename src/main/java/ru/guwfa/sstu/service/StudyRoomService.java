@@ -60,6 +60,8 @@ public class StudyRoomService extends Util implements StudyRoomDAO {
                 studyRoom.setIdFloorBuild(resultSet.getInt("idFloorBuild"));
                 studyRoom.setIdDescriptionRoom(resultSet.getInt("idDescriptionRoom"));
                 studyRoom.setTypeRoom(resultSet.getInt("typeRoom"));
+
+                list.add(studyRoom);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -84,7 +86,10 @@ public class StudyRoomService extends Util implements StudyRoomDAO {
     @Override
     public StudyRoom getById(List<Integer> list) throws SQLException {
         PreparedStatement preparedStatement = null;
-        String sql = "SELECT idStudyRoom,idCampusBuild,idFloorBuild,idDescriptionRoom,typeRoom FROM  StudyRoom WHERE idStudyRoom = ? AND idCampusBuild = ? ";
+        String sql =
+                "SELECT idStudyRoom,idCampusBuild,idFloorBuild,idDescriptionRoom,typeRoom" +
+                " FROM  StudyRoom " +
+                "WHERE idStudyRoom = ? AND idCampusBuild = ?";
         StudyRoom studyRoom = new StudyRoom();
         try {
             preparedStatement = connection.prepareStatement(sql);
@@ -107,6 +112,46 @@ public class StudyRoomService extends Util implements StudyRoomDAO {
             connection.close();
         }
         return studyRoom;
+    }
+
+    @Override
+    public List<StudyRoom> getById(int campus,int cab) {
+        List<StudyRoom> list = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        String sql =
+                "SELECT idStudyRoom,idCampusBuild,idFloorBuild,idDescriptionRoom,typeRoom " +
+                "FROM  StudyRoom " +
+                "WHERE idStudyRoom = ? AND idCampusBuild = ?" ;
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1,  cab);
+            preparedStatement.setInt(2,  campus);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+           while (resultSet.next()){
+               StudyRoom studyRoom = new StudyRoom();
+
+               studyRoom.setIdStudyRoom(resultSet.getInt("idStudyRoom"));
+               studyRoom.setIdCampusBuild(resultSet.getInt("idCampusBuild"));
+               studyRoom.setIdFloorBuild(resultSet.getInt("idFloorBuild"));
+               studyRoom.setIdDescriptionRoom(resultSet.getInt("idDescriptionRoom"));
+               studyRoom.setTypeRoom(resultSet.getInt("typeRoom"));
+               list.add(studyRoom);
+           }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }finally {
+
+            try {
+                preparedStatement.close();
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return list;
     }
 
     @Override

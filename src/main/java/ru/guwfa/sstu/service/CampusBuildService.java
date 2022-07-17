@@ -17,7 +17,9 @@ public class CampusBuildService extends Util implements CampusBuildDAO {
     public void insert(CampusBuild campusBuild) {
         PreparedStatement preparedStatement = null;
 
-        String sql = "INSERT INTO CampusBuild(idCampusBuild,idTypeBuilding,idDescriptionBuild,idFloorBuild) VALUES(?,?,?,?)";
+        String sql =
+                "INSERT INTO CampusBuild(idCampusBuild,idTypeBuilding,idDescriptionBuild,idFloorBuild)" +
+                " VALUES(?,?,?,?)";
 
         try{
             preparedStatement = connection.prepareStatement(sql);
@@ -46,7 +48,9 @@ public class CampusBuildService extends Util implements CampusBuildDAO {
     public List<CampusBuild> getAll() {
         List<CampusBuild> list = new ArrayList<>();
         Statement statement = null;
-        String sql = "SELECT idCampusBuild,idTypeBuilding,idDescriptionBuild,idFloorBuild FROM CampusBuild";
+        String sql =
+                "SELECT idCampusBuild,idTypeBuilding,idDescriptionBuild,idFloorBuild" +
+                " FROM CampusBuild";
 
         try{
             statement =  connection.createStatement();
@@ -55,10 +59,13 @@ public class CampusBuildService extends Util implements CampusBuildDAO {
 
             while (resultSet.next()){
                 CampusBuild campusBuild = new CampusBuild();
+
                 campusBuild.setIdDescriptionBuild(resultSet.getInt("idCampusBuild"));
                 campusBuild.setIdTypeBuilding(resultSet.getInt("idTypeBuilding"));
                 campusBuild.setIdDescriptionBuild(resultSet.getInt("idDescriptionBuild"));
                 campusBuild.setIdFloorBuild(resultSet.getInt("idFloorBuild"));
+
+                list.add(campusBuild);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

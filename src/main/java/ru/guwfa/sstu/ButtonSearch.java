@@ -1,5 +1,10 @@
 package ru.guwfa.sstu;
 
+import ru.guwfa.sstu.entity.DescriptionRoom;
+import ru.guwfa.sstu.entity.StudyRoom;
+import ru.guwfa.sstu.service.DescriptionRoomService;
+import ru.guwfa.sstu.service.StudyRoomService;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -16,18 +21,22 @@ import java.sql.*;
 
 @WebServlet(name = "ButtonSearch", value = "/ButtonSearch")
 public class ButtonSearch extends HttpServlet {
-    private final String jdbcUrl = "jdbc:mysql://localhost:3306/navigate";
-    private final String userName = "root";
-    private final String password = "root123xc";
+
     Connection connection;
     public void init() {}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
+        PrintWriter out = response.getWriter();
 
         String searchText = request.getParameter("textSearch");
-        List<String> list = null;
-        String sqlStr = "";
+        List<String> list ;
+        List<Integer> listInt = new ArrayList<>();
+
+        StudyRoom studyRoom = null;
+        DescriptionRoom descriptionRoom = null;
+        StudyRoomService studyRoomService = new StudyRoomService();
+        DescriptionRoomService descriptionRoomService = new DescriptionRoomService();
 
         if(searchText.length() < 1){
             String path = "/notfound";
@@ -40,20 +49,48 @@ public class ButtonSearch extends HttpServlet {
             }
         }
 
-        //Данные приходят в формате  5/220, где 5 - этаж   220 кабинет
+        //Данные приходят в формате  5/220, где 5 - Здание   220 кабинет
 
        try {
-           list = new ArrayList<>(List
+           for (String s : list = new ArrayList<>(List
                    .of(searchText
-                           .split("/")));
+                           .split("/"))
+
+           )) {
+
+           }
+
+           out.println(list);
+
+           for (String s : list){
+               listInt.add(Integer.parseInt(s));
+           }
+           out.println(listInt);
+
+           int floor = listInt.get(0);
+           int cab = listInt.get(1);
+
+           out.println(floor);
+           out.println(cab);
+
+           List<StudyRoom> list1 = studyRoomService.getById(floor,cab);
+
+          for (StudyRoom studyRoom1 : list1){
+              out.println(
+                      list1.toString()
+              );
+          }
+
+
        }
        catch (Exception e){
-           System.err.println(e);
+           out.println(e);
        }
 
 
 
     }
+
 
     public void destroy() {}
 }

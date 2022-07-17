@@ -48,7 +48,8 @@ public class DescriptionRoomService extends Util implements DescriptionRoomDAO {
     public List<DescriptionRoom> getAll() {
         List<DescriptionRoom> list = new ArrayList<>();
         Statement statement = null;
-        String sql = "SELECT idDescriptionRoom,descriptionRoom,typeRoom " +
+        String sql =
+                "SELECT idDescriptionRoom,descriptionRoom,typeRoom " +
                 "FROM DescriptionRoom";
 
         try{
@@ -58,9 +59,12 @@ public class DescriptionRoomService extends Util implements DescriptionRoomDAO {
 
             while (resultSet.next()){
                 DescriptionRoom descriptionRoom = new DescriptionRoom();
+
                 descriptionRoom.setIdDescription(resultSet.getInt("idDescriptionRoom"));
                 descriptionRoom.setDescriptionRoom(resultSet.getString("descriptionRoom"));
                 descriptionRoom.setTypeRoom(resultSet.getInt("typeRoom"));
+
+                list.add(descriptionRoom);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -85,7 +89,8 @@ public class DescriptionRoomService extends Util implements DescriptionRoomDAO {
     @Override
     public DescriptionRoom getById(int id) throws SQLException {
         PreparedStatement preparedStatement = null;
-        String sql = "SELECT idDescriptionRoom,descriptionRoom,typeRoom " +
+        String sql =
+                "SELECT idDescriptionRoom,descriptionRoom,typeRoom " +
                 "FROM DescriptionRoom " +
                 "WHERE idDescriptionRoom = ?";
         DescriptionRoom descriptionRoom = new DescriptionRoom();
