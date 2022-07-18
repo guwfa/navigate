@@ -1,0 +1,135 @@
+let elem = document.getElementById('floor1Rest');
+function showDiv(){
+    
+    elem.style.opacity = 1
+   
+}
+
+function noDiv(){
+    elem2.style.opacity = 0
+    elem3.style.opacity = 0
+    elem4.style.opacity = 0
+    elem5.style.opacity = 0
+    elem6.style.opacity = 0
+    elem7.style.opacity = 0
+    elem8.style.opacity = 0
+
+}
+
+let elem2 = document.getElementById('floor2Rest');
+function showDiv2(){
+    elem2.style.opacity = 1
+   
+}
+
+function noDiv2(){
+    elem.style.opacity = 0
+    elem3.style.opacity = 0
+    elem4.style.opacity = 0
+    elem5.style.opacity = 0
+    elem6.style.opacity = 0
+    elem7.style.opacity = 0
+    elem8.style.opacity = 0
+}
+
+let elem3 = document.getElementById('floor3Rest');
+
+function showDiv3(){
+    elem3.style.opacity = 1
+   
+}
+
+function noDiv3(){
+    elem2.style.opacity = 0
+    elem.style.opacity = 0
+    elem4.style.opacity = 0
+    elem5.style.opacity = 0
+    elem6.style.opacity = 0
+    elem7.style.opacity = 0
+    elem8.style.opacity = 0
+}
+
+let elem4 = document.getElementById('floor4Rest');
+
+function showDiv4(){
+    elem4.style.opacity = 1
+    
+}
+
+function noDiv4(){
+    elem2.style.opacity = 0
+    elem3.style.opacity = 0
+    elem.style.opacity = 0
+    elem5.style.opacity = 0
+    elem6.style.opacity = 0
+    elem7.style.opacity = 0
+    elem8.style.opacity = 0
+}
+
+let elem5 = document.getElementById('floor5Rest');
+function showDiv5(){
+    
+    elem5.style.opacity = 1
+   
+}
+
+function noDiv5(){
+    elem.style.opacity = 0
+    elem2.style.opacity = 0
+    elem3.style.opacity = 0
+    elem4.style.opacity = 0
+    elem6.style.opacity = 0
+    elem7.style.opacity = 0
+    elem8.style.opacity = 0
+
+}
+
+let elem6 = document.getElementById('floor6Rest');
+function showDiv6(){
+    elem6.style.opacity = 1
+   
+}
+
+function noDiv6(){
+    elem.style.opacity = 0
+    elem2.style.opacity = 0
+    elem3.style.opacity = 0
+    elem4.style.opacity = 0
+    elem5.style.opacity = 0
+    elem7.style.opacity = 0
+    elem8.style.opacity = 0
+}
+
+let elem7 = document.getElementById('floor7Rest');
+
+function showDiv7(){
+    elem7.style.opacity = 1
+   
+}
+
+function noDiv7(){
+    elem.style.opacity = 0
+    elem2.style.opacity = 0
+    elem3.style.opacity = 0
+    elem4.style.opacity = 0
+    elem5.style.opacity = 0
+    elem6.style.opacity = 0
+    elem8.style.opacity = 0
+}
+
+let elem8 = document.getElementById('floor8Rest');
+
+function showDiv8(){
+    elem8.style.opacity = 1
+    
+}
+
+function noDiv8(){
+    elem.style.opacity = 0
+    elem2.style.opacity = 0
+    elem3.style.opacity = 0
+    elem4.style.opacity = 0
+    elem5.style.opacity = 0
+    elem6.style.opacity = 0
+    elem7.style.opacity = 0
+}
