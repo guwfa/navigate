@@ -278,7 +278,6 @@ footer{
     background-position:-72px 0;
 }
 
-
 /* 1-2-3-4 floor */ 
 
 #selectedButton{
@@ -339,6 +338,7 @@ footer{
     overflow-y: scroll;
 
 }
+
 
 .floorNumber::-webkit-scrollbar {
     width: 7px;
@@ -420,13 +420,12 @@ footer{
     background-size: 100% 100%;
   color: #fff;
   }
-
-
-.floorMap{
-    flex: 5;
-    border: 3px solid rgb(5, 5, 5);
-    height: 400px;
+#floor4Content:active{
+  background-size: 100% 100%;
+  color: rgb(165, 19, 19);
 }
+
+
 .floorMapDeanery{
   margin-right: 285px;
   flex: 5;
@@ -555,14 +554,14 @@ footer{
     margin-left: 40px;
 }
 
-/*SVG*/
+ /*SVG*/
 
-svg{
-    position: absolute;
-    left: -20px;
-    top: -8px;
-}
-.part{
+ svg{
+  position: absolute;
+  left: -20px;
+  top: -8px;
+ }
+ .part{
   fill: #0834f8;
   opacity:.2 ;
  
@@ -577,39 +576,68 @@ svg{
   fill: #0230ff;
   opacity: .6;
 }
-.floorMap{
-    flex: 5;
-    border: 3px solid rgb(5, 5, 5);
-    height: 400px;
-    position: relative;
-    text-align: center;
-    background-color: #aaa;
-    /*overflow-x: scroll;*/
+ .floorMap{
+  flex: 5;
+  border: 3px solid rgb(5, 5, 5);
+  height: 400px;
+  position: relative;
+  text-align: center;
+  background-color: #aaa;
+ /*overflow-x: scroll;*/
 }
 .svgfloor{
-    display: block;
-    min-height: 300px;
-    width: 1280px;
-    height: 311px;
+  display: block;
+  min-height: 300px;
+  width: 1280px;
+  height: 311px;
 }
-
+ 
 .floorMap::-webkit-scrollbar {
-    width: 7px;
-    border-radius: 10px;
-
+  width: 7px;
+  border-radius: 10px;
+ 
 }
 
 .floorMap::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #f9f9fd;
-
+  border-radius: 10px;
+  background-color: #f9f9fd;
+  
 }
 
 .floorMap::-webkit-scrollbar-track {
 
-    border-radius: 10px;
-    width: 1px;
-    background-color: #0898ec;
-    border: 4px solid transparent ;
-
+  border-radius: 10px;
+  width: 1px;
+  background-color: #0898ec;
+  border: 4px solid transparent ;
+  
+}
+#floor1Rest,#floor2Rest,#floor3Rest,#floor4Rest,#floor5Rest,#floor6Rest,#floor7Rest,#floor8Rest{
+  position: absolute;
+  display: flex;
+  text-align: center;
+  left: 4%;
+  top:10%;
+opacity: 0;
+transition: opacity 0.7s;
+}
+#floorRest{
+  text-align: center;
+}
+.floorMaprestroom{
+  position: relative;
+  background-color: #aaa;
+  overflow-x: scroll;
+}
+#restroomContent:active{
+  background-size: 100% 100%;
+  color: rgb(243, 11, 11);
+}
+.partR1{
+  fill: #0c1ba0;
+  opacity: 0.8;
+}
+.partR2{
+  fill: #ec08e0;
+  opacity: 0.8;
 }
