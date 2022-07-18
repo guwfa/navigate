@@ -1,7 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheet/styleAnre.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" type="image" href="img/logoSSTU_2.png">
     <title>Навигатор по 5 корпусу </title>
 </head>

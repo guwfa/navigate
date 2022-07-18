@@ -30,6 +30,7 @@ public class ButtonSearch extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String searchText = request.getParameter("textSearch");
+        String urlPage = "";
         List<String> list ;
         List<Integer> listInt = new ArrayList<>();
 
@@ -56,41 +57,31 @@ public class ButtonSearch extends HttpServlet {
                    .of(searchText
                            .split("/"))
 
-           )) {
+           ))
 
-           }
+           for (String ss : list){ listInt.add(Integer.parseInt(ss)); }
 
-           out.println(list);
-
-           for (String s : list){
-               listInt.add(Integer.parseInt(s));
-           }
-           out.println(listInt);
-
-           int floor = listInt.get(0);
+           int campus = listInt.get(0);
            int cab = listInt.get(1);
 
-           out.println(floor);
-           out.println(cab);
+           int floor = (cab / 100);
 
-           List<StudyRoom> list1 = studyRoomService.getById(floor,cab);
+          // List<StudyRoom> list1 = studyRoomService.getById(campus,cab);
 
-          for (StudyRoom studyRoom1 : list1){
-              out.println(
-                      list1.toString()
-              );
-          }
-
+           urlPage = "/floor" + floor + ".jsp";
+           // response.setContentType("text/html");
+           response.setCharacterEncoding("UTF-8");
+           response.encodeRedirectURL("UTF-8");
+           response.encodeURL("UTF-8");
+           ServletContext servletContext = getServletContext();
+           RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(urlPage);
+           requestDispatcher.forward(request, response);
 
        }
        catch (Exception e){
            out.println(e);
        }
-
-
-
     }
-
 
     public void destroy() {}
 }

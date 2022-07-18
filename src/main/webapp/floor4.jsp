@@ -1,13 +1,15 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheet/styleAnre.css">
+    <meta http-equiv="Content-Type" charset= UTF-8>
     <link rel="icon" type="image" href="img/logoSSTU_2.png">
     <title>Навигатор по 5 корпусу </title>
 </head>
 <body>
 <header id="header">
-    <jsp:include page="page/header.jsp" />
+    <jsp:include page="page/header.jsp"/>
 </header>
 <main>
     <jsp:include page="page/searchMenu.jsp"/>
