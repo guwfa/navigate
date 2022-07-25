@@ -27,7 +27,15 @@
     <div class="floorContent">
         <div class="floorNumberLeft">
             <br>
-            <button id="floor4Content" onmouseover="hover401On()" onmouseout="hover401Off()">401</button>
+           <button id="floor4Content" onmouseover="hover401On()" onmouseout="hover401Off(),hoverauOff()" onmousedown="showDiv()">401</button>
+                <script> 
+                let elem = document.getElementById('descriptioncob');
+                    function showDiv(){
+                        
+                        elem.style.opacity = 1
+                    
+                    }
+                                    </script>
             <button id="floor4Content" onmouseover="hover403On()" onmouseout="hover403Off()">403</button>
             <button id="floor4Content" onmouseover="hover404On()" onmouseout="hover404Off()">404</button>
             <button id="floor4Content" onmouseover="hover405On()" onmouseout="hover405Off()">405</button>
