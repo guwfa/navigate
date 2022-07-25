@@ -27,6 +27,8 @@ public class ButtonSearch extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
+        response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
         String searchText = request.getParameter("textSearch");
@@ -66,9 +68,29 @@ public class ButtonSearch extends HttpServlet {
 
            int floor = (cab / 100);
 
+
+           out.println("start StudyRoom");
+           List<StudyRoom> listSt =  studyRoomService.getAll();
+           out.println("end StudyRoom");
+
+           out.println("start DescriptionRoom");
+           List<DescriptionRoom> listDs = descriptionRoomService.getAll();
+           out.println("end DescriptionRoom");
+
+           for (int i = 0; i < listSt.size()-1;i++) {
+               if (listSt.get(i).getIdFloorBuild() == floor){
+                   out.println(
+                           "<p> \nНомер аудитории  " + listSt.get(i).getIdStudyRoom() +
+                                   " \nНомер этажа " + listSt.get(i).getIdFloorBuild() +
+                                   " \nОписание аудитории " + listDs.get(listSt.get(i).getIdDescriptionRoom()).getDescriptionRoom()
+                                   + "</p>"
+                   );
+               }
+           }
+
           // List<StudyRoom> list1 = studyRoomService.getById(campus,cab);
 
-           urlPage = "/floor" + floor + ".jsp";
+         /*  urlPage = "/floor" + floor + ".jsp";
            // response.setContentType("text/html");
            response.setCharacterEncoding("UTF-8");
            response.encodeRedirectURL("UTF-8");
@@ -76,7 +98,7 @@ public class ButtonSearch extends HttpServlet {
            ServletContext servletContext = getServletContext();
            RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(urlPage);
            requestDispatcher.forward(request, response);
-
+*/
        }
        catch (Exception e){
            out.println(e);

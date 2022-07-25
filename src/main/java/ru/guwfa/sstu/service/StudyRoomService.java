@@ -42,11 +42,53 @@ public class StudyRoomService extends Util implements StudyRoomDAO {
         }
     }
 
+
+    public List<StudyRoom> getAll(int campus,int floor) {
+        PreparedStatement preparedStatement = null;
+        List<StudyRoom> list = new ArrayList<>();
+        Statement statement = null;
+        String sql =  "SELECT idStudyRoom,idCampusBuild,idFloorBuild,idDescriptionRoom,typeRoom" +
+                " FROM  StudyRoom " +
+                "WHERE  idCampusBuild = ? AND idFloorBuild = ?";
+
+        try{
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1,  campus);
+            preparedStatement.setInt(2,  floor);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                StudyRoom studyRoom = new StudyRoom();
+                studyRoom.setIdStudyRoom(resultSet.getInt("idStudyRoom"));
+                studyRoom.setIdCampusBuild(resultSet.getInt("idCampusBuild"));
+                studyRoom.setIdFloorBuild(resultSet.getInt("idFloorBuild"));
+                studyRoom.setIdDescriptionRoom(resultSet.getInt("idDescriptionRoom"));
+                studyRoom.setTypeRoom(resultSet.getInt("typeRoom"));
+
+                list.add(studyRoom);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        finally {
+            try {
+                assert statement != null;
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return list;
+    }
+
     @Override
     public List<StudyRoom> getAll() {
         List<StudyRoom> list = new ArrayList<>();
         Statement statement = null;
-        String sql = "SELECT idStudyRoom,idCampusBuild,idFloorBuild,idDescriptionRoom,typeRoom FROM  StudyRoom";
+        String sql =
+                "SELECT idStudyRoom,idCampusBuild,idFloorBuild,idDescriptionRoom,typeRoom" +
+                " FROM  StudyRoom " ;
 
         try{
             statement =  connection.createStatement();
@@ -145,6 +187,7 @@ public class StudyRoomService extends Util implements StudyRoomDAO {
         }finally {
 
             try {
+                assert preparedStatement != null;
                 preparedStatement.close();
                 connection.close();
             } catch (SQLException e) {

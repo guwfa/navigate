@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html lang="ru">
+<html >
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheet/styleAnre.css">
     <meta http-equiv="Content-Type" charset= UTF-8>

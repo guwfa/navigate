@@ -86,8 +86,51 @@ public class DescriptionRoomService extends Util implements DescriptionRoomDAO {
         return null;
     }
 
-    @Override
-    public DescriptionRoom getById(int id) throws SQLException {
+
+    public List<DescriptionRoom> getByIdAll(int id) throws SQLException {
+        PreparedStatement preparedStatement = null;
+        List<DescriptionRoom> list = new ArrayList<>();
+        Statement statement = null;
+        String sql =
+                "SELECT idDescriptionRoom,descriptionRoom,typeRoom " +
+                        "FROM DescriptionRoom " +
+                        "WHERE idDescriptionRoom = ?";
+
+        try{
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1,  id);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+
+            while (resultSet.next()){
+                DescriptionRoom descriptionRoom = new DescriptionRoom();
+
+                descriptionRoom.setIdDescription(resultSet.getInt("idDescriptionRoom"));
+                descriptionRoom.setDescriptionRoom(resultSet.getString("descriptionRoom"));
+                descriptionRoom.setTypeRoom(resultSet.getInt("typeRoom"));
+
+                list.add(descriptionRoom);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        finally {
+            try {
+
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return list;
+    }
+
+
+    public  DescriptionRoom getById(int id) throws SQLException {
         PreparedStatement preparedStatement = null;
         String sql =
                 "SELECT idDescriptionRoom,descriptionRoom,typeRoom " +
