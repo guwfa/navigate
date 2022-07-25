@@ -641,3 +641,20 @@ transition: opacity 0.7s;
   fill: #ec08e0;
   opacity: 0.8;
 }
+#descriptioncob{
+margin-bottom: 0;
+  margin-left: 10%;
+  width: 150px;
+  height: 100px;
+  background-color: #fff;
+  border: 3px solid rgb(8, 10, 148);
+  border-radius: 10px;
+opacity: 0;
+}
+#descriptioncob:active{
+  transition: .8s;
+  opacity: .6;
+}
+#descriptioncob:hover{
+  opacity: 1;
+}
